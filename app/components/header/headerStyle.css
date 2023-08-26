@@ -1,0 +1,40 @@
+.hello{
+    color:red;
+}
+.white-color{
+    color: white;
+}
+header{
+    background-color: var(--bg-dark-1100);
+    box-shadow: var(--dark-shadow);
+    padding: 1rem;
+}
+nav{
+    color: white;
+    display: flex;
+    /*Size properties*/
+    width: 80%;
+    margin: auto;
+    align-content: center;
+    justify-content: space-between;
+}
+nav ul.nav-list{
+    display: flex;
+    list-style: none;
+}
+.link-nav, .link-nav:visited, .link-nav:link{
+    color: white;
+    text-decoration: none;
+    padding: 4px 1rem;
+}
+.unlogged{
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 8px;
+    margin-left: 1rem;
+}
+.logo{
+    background-image: url(../../utils/logo40160.png);
+    height: 40px;
+    width: 160px
+}

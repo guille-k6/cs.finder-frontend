@@ -1,27 +1,47 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*{
+    margin: 0px;
+    padding: 0px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body{
+    background-color: var(--bg-dark-900);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.container{
+    width: 55%;
+    margin: auto;
+    padding: 2rem;
+    color: #F3E8EE;
+    background-color: var(--bg-dark-700);
+    box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.33);
+    -webkit-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.33);
+    border-radius: 4px;
+    margin: 2rem;
+}
+
+:root{
+
+    /* Measures */
+    --width: 63%; /* 63 L, 75 M, 90 S */
+
+
+
+
+
+    --bg-dark-1100: #070707;
+    --bg-dark-900: #121212;
+    --bg-dark-700: #1F1F1F;
+    --dark-shadow: 0px 0px 5px 4px rgba(0,0,0,0.33);
+
+    --bright-1100: #f2f4fc; /*Bright*/
+    --bright-900: #a3a3a3; /*A little darker*/
+    --bright-700: #808086; /*Could be for disable*/
+
+}
+
+.screen-width{
+    width: var(--width);
+    margin: 0 auto;
+    border-color: red;
 }
