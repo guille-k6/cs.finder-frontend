@@ -8,7 +8,7 @@ async function getJwt() {
 
 async function someComponent() {
 
-    const holiwis = await getJwt()
+  const holiwis = await getJwt()
 
   return (
     <div>{holiwis.response}</div>

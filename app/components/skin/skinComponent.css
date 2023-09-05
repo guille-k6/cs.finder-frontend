@@ -1,0 +1,5 @@
+.skin-container{
+    border: 1px solid rgb(176, 12, 176);
+    padding: 0.5rem;
+    display: flex;
+}
