@@ -1,4 +1,5 @@
 import css from './skinComponent.css';
+import StickerComponent from '../sticker/StickerComponent';
 
 function SkinComponent(skin) {
 

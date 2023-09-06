@@ -1,0 +1,5 @@
+.money-petition-container{
+    border: 1px solid green;
+    padding: 0.5rem;
+    display: flex;
+}
