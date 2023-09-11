@@ -2,6 +2,7 @@ import React from 'react';
 import css from './headerStyle.css';
 import NavLink from './NavLink';
 import LoginComponent from './LoginComponent';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 export default function MainHeader() {
 
@@ -27,6 +28,7 @@ export default function MainHeader() {
               </li>
             ))}
             <li>
+              <HomeRoundedIcon></HomeRoundedIcon>
               <LoginComponent text={"Texto"} path={"usuario"} isUserLoggedIn={false}></LoginComponent>
             </li>
           </ul>

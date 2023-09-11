@@ -9,25 +9,21 @@ body{
 }
 
 .container{
-    width: 55%;
+    width: var(--width);
     margin: auto;
-    padding: 2rem;
+    padding: 1rem;
     color: #F3E8EE;
     background-color: var(--bg-dark-700);
     box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.33);
     -webkit-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.33);
     -moz-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.33);
     border-radius: 4px;
-    margin: 2rem;
+    margin: 2rem auto;
 }
 
 :root{
 
-    /* Measures */
-    --width: 63%; /* 63 L, 75 M, 90 S */
-
-
-
+    --width: 65%; /* 65 L, 75 M, 90 S */
 
 
     --bg-dark-1100: #070707;
@@ -45,4 +41,18 @@ body{
     width: var(--width);
     margin: 0 auto;
     border-color: red;
+}
+/* Flex classes */
+.d-flex{
+    gap: 4px;
+    display: flex;
+}
+.align-center{
+    align-items: center;
+}
+.justify-space-between{
+    justify-content: space-between
+}
+.align-center{
+align-items: center
 }

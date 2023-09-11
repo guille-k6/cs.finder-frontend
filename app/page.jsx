@@ -8,7 +8,6 @@ async function getFreeTradePetitions(){
   try{
     const response = await fetch('http://localhost:8080/api/trade_petitions_unlogged');
     const trade_petitions = await response.json();
-    console.log(trade_petitions.content[3]);
     return trade_petitions;
   }catch(error){
     return error.json();

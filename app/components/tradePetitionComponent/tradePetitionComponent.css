@@ -1,0 +1,16 @@
+.user-date-layout{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.trade-petition-creation-date{
+    color: var(--bright-900);
+    font-size: smaller;
+    text-align: right;
+    padding-top: 2px;
+    padding-right: 3px;
+}
+
+.trade-petition-top-element{
+    padding: 0.5rem 1rem 0rem 1rem;
+}
