@@ -37,7 +37,7 @@ function calcularDiferenciaDeTiempo(date) {
 
 
 function TradePetitionComponent(tradePetition) {
-  const { id, creationms, expects, offers, user } = tradePetition.tradePetition;
+  const { id, creationms, description, expects, offers, user } = tradePetition.tradePetition;
   const fecha_creacion = calcularDiferenciaDeTiempo(new Date(parseInt(creationms)));
 
 
@@ -46,6 +46,7 @@ function TradePetitionComponent(tradePetition) {
     <div className="container trade-petition-container">
       <div className='d-flex justify-space-between'>
         <div className="trade-petition-name trade-petition-top-element">Peticion de intercambio: #{id}</div>
+        <div className='trade-petition-description trade-petition-top-element'>{description}</div>
         <div className="user-date-layout trade-petition-top-element">
           <div className='d-flex align-center'>
               <p className="trade-petition-user-nickname">{user.nickname}</p>

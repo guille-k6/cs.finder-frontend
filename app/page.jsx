@@ -1,17 +1,20 @@
 import Image from 'next/image'
 import SomeComponent from './someRoute/someComponent'
 import TradePetitionComponent from './components/tradePetitionComponent/TradePetitionComponent';
+import functionReturnsJson from './utils/functionReturnsJson';
 
 
 
 async function getFreeTradePetitions(){
-  try{
-    const response = await fetch('http://localhost:8080/api/trade_petitions_unlogged');
-    const trade_petitions = await response.json();
-    return trade_petitions;
-  }catch(error){
-    return error.json();
-  }
+  // try{
+  //   const response = await fetch('http://localhost:8080/api/trade_petitions_unlogged');
+  //   const trade_petitions = await response.json();
+  //   return trade_petitions;
+       return functionReturnsJson();
+    
+  // }catch(error){
+  //   return error.json();
+  // }
 }
 
 async function Home() {
