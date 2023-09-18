@@ -1,15 +1,22 @@
-import css from './stickerComponent.css'
+import './stickerComponent.css';
+import Image from 'next/image';
 
-function StickerComponent(sticker) {
+function StickerComponent(props) {
+    const {id, rarity, name, description, image} = props.sticker;
 
-    const {id, rarity, description, image} = sticker.sticker;
-    return (<div className='sticker-container'>
-                <p>{id}</p>
-                <p>{rarity}</p>
-                <p>{description}</p>
-                <p>{image}</p>
-            </div>)
+    return (
+            <div className='sticker-container' data-id={id}>
+                <div className='sticker-image-container'>
+                    <Image src={image} width={0} height={200} sizes="100vw" className='laImage' alt='Counter Strike sticker'/>
+                </div>
+                <div>
+                    <p>{name}</p>
+                    <p>{rarity}</p>
+                </div>
+
+            </div>
+        )
 
 }
 
-export default StickerComponent
+export default StickerComponent;

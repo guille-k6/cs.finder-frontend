@@ -1,9 +1,9 @@
 import css from './skinComponent.css';
 import StickerComponent from '../sticker/StickerComponent';
 
-function SkinComponent(skin) {
+function SkinComponent(props) {
 
-   const { id, weapon, name, image, rarity, condition, stattrak,  souvenir, float_value, pattern, stickers} = skin.skin;
+   const { id, weapon, name, image, rarity, condition, stattrak,  souvenir, float_value, pattern, stickers} = props.skin;
   return (
     <div className='skin-container'>
         <p>{id}</p>

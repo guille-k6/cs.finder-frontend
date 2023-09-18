@@ -21,6 +21,12 @@ body{
     margin: 2rem auto;
 }
 
+.box-shadowed{
+    box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.33);
+    -webkit-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.33);
+}
+
 :root{
 
     --width: 65%; /* 65 L, 75 M, 90 S */
@@ -32,9 +38,33 @@ body{
     --dark-shadow: 0px 0px 5px 4px rgba(0,0,0,0.33);
 
     --bright-1100: #f2f4fc; /*Bright*/
+    -bright-1000: #dadbe1;
     --bright-900: #a3a3a3; /*A little darker*/
     --bright-700: #808086; /*Could be for disable*/
 
+    --main-1100: rgb(56, 182, 255);
+    --main-900: rgb(37, 125, 176);
+    --main-700: rgb(19, 65, 91);
+
+    /* CSGO Rarity*/
+    --csgo-gray: #B0C3D9; /* Consumer - Base */
+    --csgo-light-blue: #5E98D9; /* Industrial - Medium */
+    --csgo-blue: #4B69FF; /* Mil-spec - High */
+    --csgo-purple: #8847FF; /* Restricted - Remarkable */
+    --csgo-pink: #D32CE6; /* Classified - Exotic */
+    --csgo-red: #EB4B4B; /* Covert - Extraordinary */
+    --csgo-yellow: #E4AE33; /* Contraband */
+
+}
+
+.color-1100{
+    color: var(--bright-1100);
+}
+.color-900{
+    color: var(--bright-900);
+}
+.color-700{
+    color: var(--bright-700);
 }
 
 .screen-width{
@@ -54,5 +84,6 @@ body{
     justify-content: space-between
 }
 .align-center{
-align-items: center
+    align-items: center
 }
+

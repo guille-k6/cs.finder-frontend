@@ -5,6 +5,8 @@ import CrateComponent from "../crate/CrateComponent";
 import SkinComponent from "../skin/SkinComponent";
 import MoneyPetitionComponent from "../moneyPetition/MoneyPetitionComponent";
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import SpeechBubble from '../speechBubble/speechBubble';
+import TradeSide from '../tradeSide/TradeSide';
 
 function calcularDiferenciaDeTiempo(date) {
   const now = new Date();
@@ -16,7 +18,7 @@ function calcularDiferenciaDeTiempo(date) {
   const weeks = Math.floor(days / 7);
 
   if (weeks > 2) {
-    return `hace más de 2 semanas`;
+    return `hace más de 2 sem.`;
   } else if (weeks === 1 || weeks === 2) {
     return `hace ${weeks} semana${weeks === 1 ? '' : 's'}`;
   } else if (days >= 2) {
@@ -30,7 +32,7 @@ function calcularDiferenciaDeTiempo(date) {
   } else if (minutes >= 1) {
     return `hace ${minutes} minuto${minutes === 1 ? '' : 's'}`;
   } else {
-    return 'hace menos de un minuto';
+    return 'hace menos de un min';
   }
 }
 
@@ -46,7 +48,7 @@ function TradePetitionComponent(tradePetition) {
     <div className="container trade-petition-container">
       <div className='d-flex justify-space-between'>
         <div className="trade-petition-name trade-petition-top-element">Peticion de intercambio: #{id}</div>
-        <div className='trade-petition-description trade-petition-top-element'>{description}</div>
+        {description && <SpeechBubble description={description}/>}
         <div className="user-date-layout trade-petition-top-element">
           <div className='d-flex align-center'>
               <p className="trade-petition-user-nickname">{user.nickname}</p>
@@ -56,80 +58,8 @@ function TradePetitionComponent(tradePetition) {
         </div>
       </div>    
 
-      <h1>ESPERA </h1>
-      {expects.stickers.length > 0 && (
-        <ul>
-          Stickers:
-          {expects.stickers.map((sticker, index) => (
-            <li key={index}>
-              <StickerComponent sticker={sticker}/>
-            </li>
-          ))}
-        </ul>
-      )}
-      {expects.crates.length > 0 && (
-        <ul>
-          Crates:
-          {expects.crates.map((crate, index) => (
-            <li key={index}>
-              <CrateComponent crate={crate}/>
-            </li>
-          ))}
-        </ul>
-      )}
-      {expects.skins.length > 0 && (
-        <ul>
-          Skins:
-          {expects.skins.map((skin, index) => (
-            <li key={index}>
-              <SkinComponent skin={skin}/>
-            </li>
-          ))}
-        </ul>
-      )}
-      {expects.money.amount != null && expects.money.country_code != null && (
-        <>
-          <p>Dinero: </p>
-          <MoneyPetitionComponent moneyPetition={expects.money}/>
-        </>
-      )}
-      <h1>OFRECE</h1>
-      {offers.stickers.length > 0 && (
-        <ul>
-          Stickers:
-          {offers.stickers.map((sticker, index) => (
-            <li key={index}>
-              <StickerComponent sticker={sticker}/>
-            </li>
-          ))}
-        </ul>
-      )}
-      {offers.crates.length > 0 && (
-        <ul>
-          Crates:
-          {offers.crates.map((crate, index) => (
-            <li key={index}>
-              <CrateComponent crate={crate}/>
-            </li>
-          ))}
-        </ul>
-      )}
-      {offers.skins.length > 0 && (
-        <ul>
-          Skins:
-          {offers.skins.map((skin, index) => (
-            <li key={index}>
-              <SkinComponent skin={skin}/>
-            </li>
-          ))}
-        </ul>
-      )}
-      {offers.money.amount != null && offers.money.country_code != null && (
-        <>
-          <p>Dinero: </p>
-          <MoneyPetitionComponent moneyPetition={offers.money}/>
-        </>
-      )}       
+      <TradeSide side={expects} title="Espera"/>
+      <TradeSide side={offers} title="Ofrece"/>    
     </div>
   )
 }

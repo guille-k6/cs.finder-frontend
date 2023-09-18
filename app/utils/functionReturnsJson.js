@@ -266,7 +266,7 @@ export default function returnObject(){
             {
                 "id": 3,
                 "creationms": 1693436889,
-                "description": "good trade!!!",
+                "description": "",
                 "user": {
                     "nickname": "guillek6"
                 },
