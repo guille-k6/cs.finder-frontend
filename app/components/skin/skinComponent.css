@@ -3,3 +3,28 @@
     padding: 0.5rem;
     display: flex;
 }
+.laImage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: 100%;
+    height: auto;
+}
+.skin-image-container{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.08);
+    height: 120px;
+    min-width: 120px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+.skin-stickers-container{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 5%;
+    left: 0%;
+    width: 100%;
+    height: auto;    
+}

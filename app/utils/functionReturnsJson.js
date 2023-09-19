@@ -128,6 +128,27 @@ export default function returnObject(){
                                     "description": "50% of the proceeds from the sale of this sticker support the included organizations.",
                                     "rarity": "High Grade",
                                     "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/cluj2015/vex_large.20f48097153b223651684f514c7f789bcfd353f6.png"
+                                },
+                                {
+                                    "id": "sticker-920",
+                                    "name": "Sticker | Vexed Gaming | Cluj-Napoca 2015",
+                                    "description": "50% of the proceeds from the sale of this sticker support the included organizations.",
+                                    "rarity": "High Grade",
+                                    "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/cluj2015/vex_large.20f48097153b223651684f514c7f789bcfd353f6.png"
+                                },
+                                {
+                                    "id": "sticker-920",
+                                    "name": "Sticker | Vexed Gaming | Cluj-Napoca 2015",
+                                    "description": "50% of the proceeds from the sale of this sticker support the included organizations.",
+                                    "rarity": "High Grade",
+                                    "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/cluj2015/vex_large.20f48097153b223651684f514c7f789bcfd353f6.png"
+                                },
+                                {
+                                    "id": "sticker-920",
+                                    "name": "Sticker | Vexed Gaming | Cluj-Napoca 2015",
+                                    "description": "50% of the proceeds from the sale of this sticker support the included organizations.",
+                                    "rarity": "High Grade",
+                                    "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/cluj2015/vex_large.20f48097153b223651684f514c7f789bcfd353f6.png"
                                 }
                             ]
                         }

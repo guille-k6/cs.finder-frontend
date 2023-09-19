@@ -47,13 +47,19 @@ body{
     --main-700: rgb(19, 65, 91);
 
     /* CSGO Rarity*/
-    --csgo-gray: #B0C3D9; /* Consumer - Base */
-    --csgo-light-blue: #5E98D9; /* Industrial - Medium */
-    --csgo-blue: #4B69FF; /* Mil-spec - High */
-    --csgo-purple: #8847FF; /* Restricted - Remarkable */
-    --csgo-pink: #D32CE6; /* Classified - Exotic */
-    --csgo-red: #EB4B4B; /* Covert - Extraordinary */
-    --csgo-yellow: #E4AE33; /* Contraband */
+    --csgo-gray: rgb(176, 195, 217); /* Consumer - Base */
+    --csgo-Base: rgb(176, 195, 217); /* Consumer - Base */
+    --csgo-light-blue: rgb(94, 152, 217); /* Industrial - Medium */
+    --csgo-Medium: rgb(94, 152, 217); /* Industrial - Medium */
+    --csgo-blue: rgb(75, 105, 255); /* Mil-spec - High */
+    --csgo-High: rgb(75, 105, 255); /* Mil-spec - High */
+    --csgo-purple: rgb(136, 71, 255); /* Restricted - Remarkable */
+    --csgo-Remarkable: rgb(136, 71, 255); /* Restricted - Remarkable */
+    --csgo-pink: rgb(211, 44, 230); /* Classified - Exotic */
+    --csgo-Exotic: rgb(211, 44, 230);
+    --csgo-red: rgb(235, 75, 75); /* Covert - Extraordinary */
+    --csgo-Extraordinary: rgb(235, 75, 75); /* Covert - Extraordinary */
+    --csgo-yellow: rgb(228, 174, 51); /* Contraband */
 
 }
 

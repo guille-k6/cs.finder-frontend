@@ -1,5 +1,38 @@
 .crate-container{
-    border: 1px solid blue;
+    background-color: #1b2230;
+    margin: 0.5rem;
     padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--main-900);
     display: flex;
+
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.33);
+    -webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.33);
+}
+.sticker-image-container{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.08);
+    height: 60px;
+    min-width: 60px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.laImage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: auto;
+}
+.item-name{
+    overflow-wrap: break-word;
+}
+.sticker-info-container{
+
+}
+.sticker-item-info{
+    padding: 4px;
 }

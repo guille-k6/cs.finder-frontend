@@ -1,0 +1,15 @@
+.mini-sticker-image-container{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 2px solid red;
+}
+
+.mini-sticker-image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140%;
+    height: auto;
+}
