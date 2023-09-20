@@ -1,0 +1,14 @@
+.trade-side-container{
+    width: 45%;
+    margin-top: 1rem;
+    border: 1px solid grey;
+
+    background-color: #111111;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.trade-side-title{
+    padding: 0.5rem;
+    font-size: larger;
+    border-bottom: 1px solid blue;
+}

@@ -1,23 +1,13 @@
-.skin-container{
-    border: 1px solid rgb(176, 12, 176);
-    padding: 0.5rem;
-    display: flex;
-}
-.laImage{
+.skin-image{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -60%);
+    transform: translate(-50%, -50%);
     width: 100%;
     height: auto;
 }
-.skin-image-container{
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.08);
-    height: 120px;
-    min-width: 120px;
-    border: 1px solid;
-    border-radius: 8px;
+.image-with-stickers{
+    top: 40%;
 }
 .skin-stickers-container{
     display: flex;
@@ -27,4 +17,21 @@
     left: 0%;
     width: 100%;
     height: auto;    
+}
+.skin-stattrak{
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    color: var(--csgo-stattrak);
+    font-size: smaller;
+    font-weight: bold;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+}
+.skin-souvenir{
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    color: var(--csgo-souvenir);
+    font-size: smaller;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }

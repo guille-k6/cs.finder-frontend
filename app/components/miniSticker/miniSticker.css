@@ -1,8 +1,7 @@
 .mini-sticker-image-container{
     position: relative;
-    width: 30px;
-    height: 30px;
-    border: 2px solid red;
+    width: 28px;
+    height: 28px;
 }
 
 .mini-sticker-image{

@@ -3,8 +3,12 @@ import Image from 'next/image';
 
 function CrateComponent(crate) {
     const {id, name, image} = crate.crate;
-    return (<div className='crate-container'>
-                <div className='sticker-image-container'>
+    const border_style = { 
+        borderRight: `2px solid var(--main-700)`,
+        backgroundColor: `var(--main-1100)`,
+    }
+    return (<div className='trade-petition-item-container'>
+                <div className='item-image-container crate-image-container' style={border_style}>
                     <Image src={image} width={0} height={0} sizes="100vw" className='laImage' alt='Counter Strike sticker'/>
                 </div>
                 <div className='sticker-info-container d-flex'>

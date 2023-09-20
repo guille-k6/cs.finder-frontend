@@ -56,10 +56,14 @@ function TradePetitionComponent(tradePetition) {
           </div>
           <p className="trade-petition-creation-date">{fecha_creacion.toString()}</p>
         </div>
-      </div>    
+      </div> 
 
-      <TradeSide side={expects} title="Espera"/>
-      <TradeSide side={offers} title="Ofrece"/>    
+      <div className='d-flex justify-space-around'>
+        <TradeSide side={expects} title="Espera"/>
+        <div>...</div>
+        <TradeSide side={offers} title="Ofrece"/>  
+      </div>
+  
     </div>
   )
 }

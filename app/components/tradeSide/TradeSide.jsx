@@ -1,3 +1,4 @@
+import './tradeSide.css'
 import StickerComponent from "../sticker/StickerComponent";
 import CrateComponent from "../crate/CrateComponent";
 import SkinComponent from "../skin/SkinComponent";
@@ -8,37 +9,28 @@ const TradeSide = (props) => {
     const {crates, money, skins, stickers} = side;
 
     return (
-        <>
-            <h1>{title}</h1>
+        <div className="trade-side-container">
+            <p className='trade-side-title'>{title}</p>
             {stickers.length > 0 && (
-                <ul>
-                Stickers:
+                <>
                 {stickers.map((sticker, index) => (
-                    <li key={index}>
-                    <StickerComponent sticker={sticker}/>
-                    </li>
+                    <StickerComponent key={index} sticker={sticker}/>
                 ))}
-                </ul>
+                </>
             )}
             {crates.length > 0 && (
-                <ul>
-                Crates:
+                <>
                 {crates.map((crate, index) => (
-                    <li key={index}>
-                    <CrateComponent crate={crate}/>
-                    </li>
+                    <CrateComponent key={index} crate={crate}/>
                 ))}
-                </ul>
+                </>
             )}
             {skins.length > 0 && (
-                <ul>
-                Skins:
+                <>
                 {skins.map((skin, index) => (
-                    <li key={index}>
-                    <SkinComponent skin={skin}/>
-                    </li>
+                    <SkinComponent key={index} skin={skin}/>
                 ))}
-                </ul>
+                </>
             )}
             {money.amount != null && money.country_code != null && (
                 <>
@@ -46,7 +38,7 @@ const TradeSide = (props) => {
                 <MoneyPetitionComponent moneyPetition={money}/>
                 </>
             )}
-        </>
+        </div>
     );
 }
 
