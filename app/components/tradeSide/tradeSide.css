@@ -1,14 +1,26 @@
 .trade-side-container{
     width: 45%;
-    margin-top: 1rem;
-    border: 1px solid grey;
-
-    background-color: #111111;
-    border-radius: 1rem;
     padding: 1rem;
+    margin-top: 0.5rem;
 }
 .trade-side-title{
-    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 4px;
     font-size: larger;
-    border-bottom: 1px solid blue;
+    display: flex;
+    gap: 4px;
+}
+
+.offer-color{
+    color: red;
+    opacity: 0.8;
+}
+.request-color{
+    color: green;
+    opacity: 0.8;
+}
+.tradepetitioncontainer{
+    margin: 0rem 0.5rem;
+    border-bottom: 1px solid var(--bg-dark-500);
+    /* rgb(77, 77, 77); */
 }

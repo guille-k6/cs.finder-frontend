@@ -1,12 +1,7 @@
-'use client'
-import css from './tradePetitionComponent.css'
-import StickerComponent from "../sticker/StickerComponent";
-import CrateComponent from "../crate/CrateComponent";
-import SkinComponent from "../skin/SkinComponent";
-import MoneyPetitionComponent from "../moneyPetition/MoneyPetitionComponent";
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import SpeechBubble from '../speechBubble/speechBubble';
 import TradeSide from '../tradeSide/TradeSide';
+import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 
 function calcularDiferenciaDeTiempo(date) {
   const now = new Date();
@@ -39,10 +34,10 @@ function calcularDiferenciaDeTiempo(date) {
 
 
 function TradePetitionComponent(tradePetition) {
+
   const { id, creationms, description, expects, offers, user } = tradePetition.tradePetition;
+
   const fecha_creacion = calcularDiferenciaDeTiempo(new Date(parseInt(creationms)));
-
-
 
   return (
     <div className="container trade-petition-container">
@@ -59,9 +54,9 @@ function TradePetitionComponent(tradePetition) {
       </div> 
 
       <div className='d-flex justify-space-around'>
-        <TradeSide side={expects} title="Espera"/>
-        <div>...</div>
         <TradeSide side={offers} title="Ofrece"/>  
+        <CompareArrowsIcon fontSize='large' className='trade-icon'/>
+        <TradeSide side={expects} title="Espera"/>
       </div>
   
     </div>

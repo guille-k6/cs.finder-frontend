@@ -1,14 +1,17 @@
 .money-petition-container{
-    padding: 0.5rem;
+    background-color: rgba(0, 255, 42, 0.08);
+    margin: 0.25rem 0.5rem;
+    padding: 0px 6px;
+    border-radius: 4px;
     display: flex;
     gap: 2px;
     align-items: center
 }
 .money-country-code{
     font-size: smaller;
-    text-decoration: underline;
     box-sizing: border-box;
+    color: var(--bright-900);
 }
 .money-icon{
-    color: rgb(3, 81, 3);
+    color: rgb(10, 116, 10);
 }
