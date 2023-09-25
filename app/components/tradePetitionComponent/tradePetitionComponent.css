@@ -14,7 +14,14 @@
     padding-top: 2px;
     padding-right: 3px;
 }
-
+.trade-petition-name-layout{
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 6px;
+    background-color: rgb(62, 62, 62);
+    border-radius: 4px;
+}
 .trade-petition-top-element{
     padding: 0.5rem 1rem 0rem 1rem;
 }

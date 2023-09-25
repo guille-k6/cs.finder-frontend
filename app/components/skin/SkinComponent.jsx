@@ -17,6 +17,8 @@ function SkinComponent(props) {
 
   const imageClasses = `skin-image${stickers.length>0 ? ' image-with-stickers' : ''}`;
 
+  const nameClasses = `sticker-item-info sticker-item-name ${stattrak ? 'color-stattrak' : ''} ${souvenir ? 'color-souvenir' : ''}`;
+
 
   return (
     <div className='trade-petition-item-container'>
@@ -27,20 +29,20 @@ function SkinComponent(props) {
                 <MiniSticker key={index} sticker={sticker}></MiniSticker>
             ))}
         </div>
-        {stattrak && <div className='skin-stattrak'>ST</div>}
-        {souvenir && <div className='skin-souvenir'>SV</div>}
+        {!!stattrak && <div className='skin-stattrak'>ST</div>}
+        {!!souvenir && <div className='skin-souvenir'>SV</div>}
       </div>
-      <div>
+      <div className='skin-detail-container'>
         <div className='d-flex'>
           <p className='sticker-item-info item-tag'>Item</p>
-          <p className='sticker-item-info sticker-item-name'>{weaponName()}</p>
+          <p className={nameClasses}>{weaponName()}</p>
         </div>
-        { float_value &&
+        { !!float_value &&
         <div className='d-flex'>
           <p className='sticker-item-info item-tag'>Float</p>
           <p className='sticker-item-info sticker-item-name'>{float_value}</p>
         </div>}
-        { pattern &&
+        { !!pattern &&
         <div className='d-flex'>
           <p className='sticker-item-info item-tag'>Pattern</p>
           <p className='sticker-item-info sticker-item-name'>{pattern}</p>

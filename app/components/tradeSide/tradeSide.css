@@ -2,6 +2,8 @@
     width: 45%;
     padding: 1rem;
     margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
 }
 .trade-side-title{
     margin: 0.5rem;
@@ -10,7 +12,10 @@
     display: flex;
     gap: 4px;
 }
-
+.items-container{
+    width: 100%;
+    margin: auto;
+}
 .offer-color{
     color: red;
     opacity: 0.8;
@@ -19,8 +24,12 @@
     color: green;
     opacity: 0.8;
 }
-.tradepetitioncontainer{
+.trade-side-title-container{
     margin: 0rem 0.5rem;
     border-bottom: 1px solid var(--bg-dark-500);
     /* rgb(77, 77, 77); */
+}
+.no-items-text{
+    color: var(--bright-700);
+    text-align: center;
 }

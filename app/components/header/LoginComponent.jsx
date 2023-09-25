@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 const LoginComponent = ({ text, path, isUserLoggedIn }) => {
     
@@ -12,7 +13,10 @@ const LoginComponent = ({ text, path, isUserLoggedIn }) => {
         )
     }else{
         return(
-            <Link href={"login"} className='link-nav unlogged'>Login</Link>
+            <Link href={"login"} className='link-nav unlogged'>
+                <AccountCircleOutlinedIcon fontSize='small'></AccountCircleOutlinedIcon>
+                <p>Login</p>
+            </Link>
         )
     }
 

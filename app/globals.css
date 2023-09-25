@@ -5,24 +5,35 @@
 }
 
 body{
-    /* background-color: var(--csgo-souvenir); */
     background: #4B79A1;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, var(--g1), var(--g2));  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, var(--g1), var(--g2)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, var(--g1), var(--g2));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--g1), var(--g2)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
 .container{
-    width: var(--width);
+    width: 100%;
     margin: auto;
     padding: 1rem;
     color: #F3E8EE;
     background-color: rgb(19, 19, 20);
+    border-radius: 8px;
+}
+
+.trade-petition-border{
+    background-color: red;
+    width: var(--width);
+    padding: 1px;
+    margin: 1rem auto;
+    border-radius: 8px;
+    background: var(--main-1100);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, var(--main-700), #244d53);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--main-700), #244d53); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+    background-size: 400% 400%;
+    animation: animatebg 15s ease infinite;
     box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.8);
     -webkit-box-shadow: 0px 0px 4px 2px rgb(0 0 0 / 40%);
-    -moz-box-shadow: 0px 0px 5px 4px rgb(0 0 0 / 40%);
-    border-radius: 4px;
-    margin: 2rem auto;
+    -moz-box-shadow: 0px 0px 5px 4px rgb(0 0 0 / 40%); 
 }
 
 .box-shadowed{
@@ -52,10 +63,11 @@ background: linear-gradient(to right, var(--g1), var(--g2)); /* W3C, IE 10+/ Edg
 
     --bright-1100: #f2f4fc; /*Bright*/
     -bright-1000: #dadbe1;
-    --bright-900: #a3a3a3; /*A little darker*/
+    --bright-900: #c2c2c2; /*A little darker*/
     --bright-700: #808086; /*Could be for disable*/
 
     --main-1100: rgb(56, 182, 255);
+    --main-1000: rgb(52, 160, 222);
     --main-900: rgb(37, 125, 176);
     --main-700: rgb(19, 65, 91);
 
@@ -129,17 +141,73 @@ background: linear-gradient(to right, var(--g1), var(--g2)); /* W3C, IE 10+/ Edg
     margin: 0.5rem;
     border-radius: 8px;
     display: flex;
-
-    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
-    -webkit-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
 }
 .item-image-container{
     position: relative;
     opacity: 0.8;
     background-image: repeating-radial-gradient( circle at 0 0, transparent 0, rgb(21 73 91 / 55%) 10px ), repeating-linear-gradient( rgb(81 83 87 / 27%), rgb(19, 65, 91));
     border-radius: 8px 0px 0px 8px;
-    height: 70px;
-    min-width: 70px;
+    height: 72px;
+    min-width: 72px;
+}
+.page-title{
+    color: var(--bright-1100);
+}
+.title-h1{
+    font-size: 46px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
+}
+.title-h2{
+    font-size: 20px;
+    color: #b8b8b8;
+    font-weight: 400;
+}
+.h1-items{
+    color: var(--main-1000);
+    border-bottom: 1px solid var(--bright-1100);
+    text-shadow: 0px 0px 6px rgba(19, 65, 91, 0.5);
+}
+.thediv{
+    width: 80%;
+    height: 250px;
+}
+.someImage{
+    height: 100%;
+    width: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+.title-container{
+    display: flex;
+    width: var(--width);
+    margin: 2rem auto;
+    margin-top: 4rem;
+    gap: 1rem;
+}
+.last-petitions-title{
+    width: var(--width);
+    margin: 0.5rem auto;
+    font-size: 26px;
+    color: var(--bright-1100);
+    align-items: center;
+}
+.swap-icon{
+    background-color: var(--bg-dark-1000);
+    margin: 0.5rem;
+    margin-left: 0rem;
+    border-radius: 4px;
+}
+
+
+
+@keyframes animatebg{
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;        
+    }
+    100% {
+        background-position: 0 50%;        
+    }
 }
 
