@@ -30,7 +30,7 @@ nav ul.nav-list{
     transition: 0.3s ease;
 }
 .logo{
-    background-image: url(../../utils/logo40160.png);
+    background-image: url(../../../public/images/logo40160.png);
     height: 40px;
     width: 160px
 }

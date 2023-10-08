@@ -1,4 +1,3 @@
-import SomeComponent from './someRoute/someComponent'
 import TradePetitionComponent from './components/tradePetitionComponent/TradePetitionComponent';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 //import functionReturnsJson from './utils/functionReturnsJson';

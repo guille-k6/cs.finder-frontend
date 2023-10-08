@@ -53,6 +53,7 @@ body{
     --item-bg: rgb(25,26,27);
 
     --bg-dark-1100: #070707;
+    --bg-dark-1050: #0c0c0c;
     --bg-dark-1000: #111111;
     --bg-dark-900: #121212;
     --bg-dark-700: #1F1F1F;
@@ -62,7 +63,7 @@ body{
 
 
     --bright-1100: #f2f4fc; /*Bright*/
-    -bright-1000: #dadbe1;
+    --bright-1000: #dadbe1;
     --bright-900: #c2c2c2; /*A little darker*/
     --bright-700: #808086; /*Could be for disable*/
 
@@ -70,6 +71,9 @@ body{
     --main-1000: rgb(52, 160, 222);
     --main-900: rgb(37, 125, 176);
     --main-700: rgb(19, 65, 91);
+
+    --danger-700: rgb(235, 89, 89);
+    --danger-900: rgb(235, 62, 62);
 
     /* Skin Rarity                             Sticker rarity */
     --csgo-Consumer: rgb(176, 195, 217);    --csgo-Base: rgb(176, 195, 217); 
@@ -120,7 +124,6 @@ body{
 .screen-width{
     width: var(--width);
     margin: 0 auto;
-    border-color: red;
 }
 /* Flex classes */
 .d-flex{
@@ -195,6 +198,9 @@ body{
     margin: 0.5rem;
     margin-left: 0rem;
     border-radius: 4px;
+}
+.hide{
+    display: none;
 }
 
 

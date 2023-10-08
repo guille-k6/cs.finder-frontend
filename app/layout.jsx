@@ -6,7 +6,7 @@ import MainFooter from './components/footer/MainFooter';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'CS.BROKER',
+  title: 'CS.Finder',
   description: 'App to trade your skins',
 }
 

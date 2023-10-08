@@ -43,7 +43,7 @@ footer{
 }
 
 .footer-logo{
-    background-image: url(../../utils/csf\ logo\ grande.png);
+    background-image: url(../../../public/images/csf\ logo\ grande.png);
     background-size: cover;
     width: 320px;
     height: 90px;
