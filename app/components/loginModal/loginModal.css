@@ -5,9 +5,9 @@
     color: var(--bright-1100);
     padding: 2rem;
     margin: 4rem auto;
-    border: 1px solid var(--main-1100);
+    border: 1px solid var(--bg-dark-1100);
     border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,1);
     min-width: 23%;
     position: relative;
 }
@@ -64,17 +64,28 @@
     color: var(--bright-1100);
 }
 
-.login-modal-container::backdrop{
-    background-color: rgba(32, 126, 209, 0.2);
+.modal-container::backdrop{
+    background-color: rgba(32, 126, 209, 0.15);
+}
+
+.login-title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .login-title{
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
+    font-size: 26px;
+    font-weight: 300;
     padding: .5rem 0rem;
-    margin: auto;
-    text-align: center;
-    color: var(--main-1000);
+    color: var(--bright-1000)
+}
+
+.login-icon{
+    font-weight: 100;
+    color: var(--main-900)
 }
 
 .login-button{

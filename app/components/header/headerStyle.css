@@ -16,6 +16,7 @@ nav ul.nav-list{
 }
 .link-nav, .link-nav:visited, .link-nav:link{
     display:flex;
+    align-items: center;
     gap: 4px;
     color: var(--bright-900);
     text-decoration: none;

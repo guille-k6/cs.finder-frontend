@@ -1,11 +1,14 @@
 'use client'
-import { TextField } from '@mui/material';
-import CircularProgress from '@mui/material/CircularProgress';
+
 import './loginModal.css'
 import { useRef, useState } from "react";
+import { signIn } from "next-auth/react";
+
 import Link from 'next/link';
+
+import CircularProgress from '@mui/material/CircularProgress';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import Image from 'next/image';
+import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 
 const LoginModal = ( ) => {
     const [loading, setLoading] = useState(false);
@@ -18,7 +21,7 @@ const LoginModal = ( ) => {
         message: null
     });
     const [errorMessage, setErrorMessage] = useState('');
-    const [errorComponent, setErrorComponent] = useState('asdad');
+
     const refs = {
         modalRef: useRef(),
         emailRef: useRef(),
@@ -35,30 +38,23 @@ const LoginModal = ( ) => {
     async function handleLoginSubmit(){
         const email = refs.emailRef.current.value;
         const password = refs.passRef.current.value;
-        const url = 'http://localhost:8080/api/v1/auth/authenticate';
-        const body = { email, password };
-        try{
-            setLoading(true);
-            const response = await fetch(url, { method: 'POST',
-                                                headers: { 'Content-Type': 'application/json'},
-                                                body: JSON.stringify(body)
-                                                });
-            const data = await response.json();
-            
-            if(response.ok){
-                sessionStorage.setItem("jwt", `Bearer ${data.token}`);
-                refs.modalRef.close();
-            }else{
-                showErrorMessage(data.message);
-            }
-    
-        } catch(error){
-            showErrorMessage('Hubo un error inesperado');
 
-        } finally{
-            setLoading(false);
+        setLoading(true);
+        const responseNextAuth = await signIn("credentials", {
+            email,
+            password,
+            redirect: false,
+        });
+
+        if (responseNextAuth.ok) {
+            close();
+        }else{
+            showErrorMessage(responseNextAuth.error);
         }
+
+        setLoading(false);
     }
+
     function showErrorMessage(mensaje, ms){
         if (!ms) ms = 5000;
         setErrorMessage(mensaje);
@@ -105,7 +101,7 @@ const LoginModal = ( ) => {
     }
 
     const validatePassw = passw => {
-        if(passw.length >= 6){
+        if(passw.length >= 4){
             setPasswError({
                 initial: false,
                 message: null
@@ -129,7 +125,10 @@ const LoginModal = ( ) => {
             <button onClick={open}>Open modal</button>
             <dialog ref={refs.modalRef} className="modal-container">
                 <div className='login-container'>
-                    <h4 className='login-title'>Iniciar sesión</h4>
+                    <div className='login-title-container'>
+                        <LoginOutlinedIcon className='login-icon'></LoginOutlinedIcon>
+                        <h4 className='login-title'>Iniciar sesión</h4>
+                    </div>
                     <CloseRoundedIcon className='icon-close-modal' onClick={close}></CloseRoundedIcon>
                     <div className='pb-0'>
                         <div className='input-container'>
@@ -151,8 +150,6 @@ const LoginModal = ( ) => {
                             <Link href={'/registrate'} className='login-link signup'>Registrarse</Link>
                         </div>
                         <p className='error-message' ref={refs.msgRef}>{errorMessage}</p>
-                    </div>
-                    <div>
                     </div>
                     <div>
                         {!loading && <button className='login-button' disabled={isDisabled()} onClick={handleLoginSubmit}>Login</button>}

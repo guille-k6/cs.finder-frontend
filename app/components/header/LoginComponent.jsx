@@ -1,13 +1,22 @@
+'use client';
+
 import Link from 'next/link';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const LoginComponent = ({ text, path, isUserLoggedIn }) => {
+
+    const { data: session, status } = useSession();
+
+    console.log({session, status});
     
-    if (isUserLoggedIn){
+    if (status === 'authenticated'){
         return(
-            <div>
-                <Link href={path} className='link-nav login'>{text}</Link> {/* En el text iria el nombre de usuario */}
-                <div>LOGO</div>
+            <div className='d-flex'>
+                <button onClick={() => signOut()}> Sign out</button>
+                <AccountCircleOutlinedIcon fontSize='small'></AccountCircleOutlinedIcon>
+                <p>{session.user?.username}</p>
             </div>
 
         )
