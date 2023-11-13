@@ -44,7 +44,7 @@ body{
 
 :root{
 
-    --width: 65%; /* 65 L, 75 M, 90 S */
+    --width: 60%; /* 65 L, 75 M, 90 S */
 
     --g1: #161d24;
     --g2: #080e13;
@@ -199,6 +199,9 @@ body{
     margin-left: 0rem;
     border-radius: 4px;
 }
+.text-a-center{
+    text-align: center;
+}
 .hide{
     display: none;
 }
@@ -214,6 +217,24 @@ body{
     }
     100% {
         background-position: 0 50%;        
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+    :root {
+      --width: 70%;
+    }
+}
+  
+@media screen and (min-width: 451px) and (max-width: 800px) {
+    :root {
+        --width: 85%;
+    }
+}
+  
+@media screen and (max-width: 450px) {
+    :root {
+        --width: 95%;
     }
 }
 

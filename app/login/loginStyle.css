@@ -1,27 +1,5 @@
 .login-container-main{
+    margin: 2rem 0rem;
     display: flex;
-    gap: 0px;
-}
-.delete-after{
-    min-height: calc(100vh - 3rem);
-}
-.reset{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-.login-left{
-    width: 40%;
-    background-color: var(--bg-dark-1100);
-}
-.login-right{
-    width: 60%;
-    /*background: linear-gradient(
-        217deg,
-        rgba(255, 0, 0, 0.8),
-        rgba(255, 0, 0, 0) 70.71%
-      ), radial-gradient(rgba(230, 100, 101, 0.8), rgba(145, 152, 229, 0.8)),
-      linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 255, 26, 0) 70.71%);*/
-      background-image: radial-gradient(50px 80px at 20% 80%, rgba(230, 100, 101, 0.8), transparent),
-      linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%);
+    justify-content: center;
 }

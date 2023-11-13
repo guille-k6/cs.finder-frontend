@@ -1,16 +1,15 @@
-/*'use client'
+'use client'
 
-import './loginModal.css'
+import './loginForm.css'
 import { useRef, useState } from "react";
 import { signIn } from "next-auth/react";
 
 import Link from 'next/link';
 
 import CircularProgress from '@mui/material/CircularProgress';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 
-const LoginModal = ( ) => {
+const LoginForm = ( ) => {
     const [loading, setLoading] = useState(false);
     const [emailError, setEmailError] = useState({
         initial: true,
@@ -29,30 +28,31 @@ const LoginModal = ( ) => {
         msgRef: useRef(),
     }
 
-    function open(){
-        refs.modalRef.current.showModal();
-    }
-    function close(){
-        refs.modalRef.current.close();
-    }
     async function handleLoginSubmit(){
         const email = refs.emailRef.current.value;
         const password = refs.passRef.current.value;
 
-        setLoading(true);
-        const responseNextAuth = await signIn("credentials", {
-            email,
-            password,
-            redirect: false,
-        });
+        try {
+            setLoading(true);
+            const responseNextAuth = await signIn("credentials", {
+                email,
+                password,
+                redirect: false,
+            });
 
-        if (responseNextAuth.ok) {
-            close();
-        }else{
-            showErrorMessage(responseNextAuth.error);
+            if (responseNextAuth.ok) {
+                // Handle if it's right
+            }else{
+                console.log(responseNextAuth);
+                showErrorMessage(responseNextAuth.error);
+            }
+        } catch (error) {
+            console.log(error);
+            showErrorMessage(error);
+        }finally{
+            setLoading(false);
         }
 
-        setLoading(false);
     }
 
     function showErrorMessage(mensaje, ms){
@@ -71,7 +71,7 @@ const LoginModal = ( ) => {
         emailInputValue = e.target.value;
         timeoutId = setTimeout(() => {
             validateEmail(e.target.value);
-        }, 600);
+        }, 300);
     }
     const validateEmail = email => {
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -117,19 +117,15 @@ const LoginModal = ( ) => {
     }
 
     const isDisabled = () => emailError.initial || passwError.initial || emailError.message || passwError.message;
-    
-    const error = true;
 
     return (
         <>  
-            <button onClick={open}>Open modal</button>
-            <dialog ref={refs.modalRef} className="modal-container">
+            <div ref={refs.modalRef} className="modal-container">
                 <div className='login-container'>
                     <div className='login-title-container'>
                         <LoginOutlinedIcon className='login-icon'></LoginOutlinedIcon>
                         <h4 className='login-title'>Iniciar sesión</h4>
                     </div>
-                    <CloseRoundedIcon className='icon-close-modal' onClick={close}></CloseRoundedIcon>
                     <div className='pb-0'>
                         <div className='input-container'>
                             {emailError.message &&
@@ -147,7 +143,6 @@ const LoginModal = ( ) => {
                     <div>
                         <div className='d-flex justify-space-between links-container'>
                             <Link href={'/new-password'} className='login-link forgot-passw'>Olvidaste tu contraseña?</Link>
-                            <Link href={'/registrate'} className='login-link signup'>Registrarse</Link>
                         </div>
                         <p className='error-message' ref={refs.msgRef}>{errorMessage}</p>
                     </div>
@@ -156,9 +151,9 @@ const LoginModal = ( ) => {
                         {loading && <div className='spinner'><CircularProgress sx={{margin: 'auto', color: 'var(--main-1100)'}}/></div>}
                     </div>
                 </div>
-            </dialog>
+            </div>
         </>
     );
 }
 
-export default LoginModal;*/
+export default LoginForm;
