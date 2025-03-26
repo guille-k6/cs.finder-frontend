@@ -1,15 +1,11 @@
-'use client'
-
-import './loginForm.css'
-import { useRef, useState } from "react";
-import { signIn } from "next-auth/react";
-
-import Link from 'next/link';
+'use client';
+import { useState, useEffect, useRef } from "react";
 
 import CircularProgress from '@mui/material/CircularProgress';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 
-const LoginForm = ( ) => {
+const RegisterForm = () => {
+
     const [loading, setLoading] = useState(false);
     const [emailError, setEmailError] = useState({
         initial: true,
@@ -19,43 +15,17 @@ const LoginForm = ( ) => {
         initial: true,
         message: null
     });
+    const [twoPasswError, setTwoPasswError] = useState({
+        initial: true,
+        message: null
+    })
     const [errorMessage, setErrorMessage] = useState('');
 
     const refs = {
         emailRef: useRef(),
         passRef: useRef(),
+        twoPassRef: useRef(),
         msgRef: useRef(),
-    }
-
-    async function handleLoginSubmit(){
-        const email = refs.emailRef.current.value;
-        const password = refs.passRef.current.value;
-
-        try {
-            setLoading(true);
-            const responseNextAuth = await signIn("credentials", {
-                email,
-                password,
-                redirect: false,
-            });
-
-            if (responseNextAuth.ok) {
-                console.log(responseNextAuth);
-                //sessionStorage.settItem("sessionUser", responseNextAuth)
-                // Handle if it's right
-            }else{
-                if(responseNextAuth.error === 'fetch failed'){
-                    showErrorMessage('El servidor no envió una respuesta.')
-                }else{
-                    showErrorMessage(responseNextAuth.error);
-                }
-            }
-        } catch (error) {
-            showErrorMessage('Ocurrió un error en el servidor');
-        }finally{
-            setLoading(false);
-        }
-
     }
 
     function showErrorMessage(mensaje, ms){
@@ -94,12 +64,21 @@ const LoginForm = ( ) => {
     }
 
     let passwInputValue = '';
+    let passwTwoInputValue = '';
 
     const handlePassChange = e => {
         clearTimeout(timeoutId);
         passwInputValue = e.target.value;
         timeoutId = setTimeout(() => {
             validatePassw(e.target.value);
+        }, 600);
+    }
+
+    const handleTwoPassChange = e => {
+        clearTimeout(timeoutId);
+        passwTwoInputValue = e.target.value;
+        timeoutId = setTimeout(() => {
+            validateTwoPassw(e.target.value);
         }, 600);
     }
 
@@ -119,7 +98,29 @@ const LoginForm = ( ) => {
         }
     }
 
-    const isDisabled = () => emailError.initial || passwError.initial || emailError.message || passwError.message;
+    const validateTwoPassw = twoPassw => {
+        if(twoPassw.length >= 4 && twoPassw === refs.passRef.current.value){
+            setTwoPasswError({
+                initial: false,
+                message: null
+            })
+            refs.twoPassRef.current.classList.remove('border-danger');
+        }else if(twoPassw !== refs.passRef.current.value){
+            setTwoPasswError({
+                initial: false,
+                message: 'Las contraseñas no coinciden'
+            })
+            refs.twoPassRef.current.classList.add('border-danger');
+        }else{
+            setPasswError({
+                initial: false,
+                message: 'Contraseña no válida'
+            })
+            refs.passRef.current.classList.add('border-danger');            
+        }
+    }
+
+    const isDisabled = () => emailError.initial || passwError.initial || emailError.message || passwError.message || twoPasswError.message;
 
     return (
         <>
@@ -127,7 +128,7 @@ const LoginForm = ( ) => {
                 <div className='login-container'>
                     <div className='login-title-container'>
                         <LoginOutlinedIcon className='login-icon'></LoginOutlinedIcon>
-                        <h4 className='login-title'>Iniciar sesión</h4>
+                        <h4 className='login-title'>Registrate</h4>
                     </div>
                     <div className='pb-0'>
                         <div className='input-container'>
@@ -143,14 +144,18 @@ const LoginForm = ( ) => {
                             <input type='password' className='login-input' placeholder='Contraseña' onChange={handlePassChange} ref={refs.passRef}/>
                         </div>
                     </div>
-                    <div>
-                        <div className='d-flex justify-space-between links-container'>
-                            <Link href={'/new-password'} className='login-link forgot-passw'>Olvidaste tu contraseña?</Link>
+                    <div className='pb-0'>
+                        <div className='input-container'>
+                            {twoPasswError.message &&
+                            <p className='input-error'>{twoPasswError.message}</p>}
+                            <input type='password' className='login-input' placeholder='Repetir contraseña' onChange={handleTwoPassChange} ref={refs.twoPassRef}/>
                         </div>
+                    </div>
+                    <div>
                         <p className='error-message' ref={refs.msgRef}>{errorMessage}</p>
                     </div>
                     <div>
-                        {!loading && <button className='login-button' disabled={isDisabled()} onClick={handleLoginSubmit}>Login</button>}
+                        {!loading && <button className='login-button' disabled={isDisabled()}>Enviar</button>}
                         {loading && <div className='spinner'><CircularProgress sx={{margin: 'auto', color: 'var(--main-1100)'}}/></div>}
                     </div>
                 </div>
@@ -159,4 +164,4 @@ const LoginForm = ( ) => {
     );
 }
 
-export default LoginForm;
+export default RegisterForm;

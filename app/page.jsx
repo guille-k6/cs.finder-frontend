@@ -1,23 +1,11 @@
 import TradePetitionComponent from './components/tradePetitionComponent/TradePetitionComponent';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import getPublicTradePetitions from './logic/api_calls';
 //import functionReturnsJson from './utils/functionReturnsJson';
-
-
-
-async function getFreeTradePetitions(){
-  try{
-    const response = await fetch('http://localhost:8080/api/trade_petitions_unlogged');
-    const trade_petitions = await response.json();
-    return trade_petitions;
-    
-  }catch(error){
-    return console.log(error);
-  }
-}
 
 async function Home() {
 
-  const trade_petitions = await getFreeTradePetitions();
+  const trade_petitions = await getPublicTradePetitions();
   return (
     <main>
       <div className='title-container'>

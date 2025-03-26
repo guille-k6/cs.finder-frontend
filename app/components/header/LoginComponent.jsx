@@ -2,21 +2,26 @@
 
 import Link from 'next/link';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useState, useEffect } from 'react';
 
-const LoginComponent = ({ text, path, isUserLoggedIn }) => {
-
+const LoginComponent = () => {
+    const [username, setUsername] = useState('');
     const { data: session, status } = useSession();
+
+    function handleSignOut(){
+        sessionStorage.removeItem("sessionUser");
+        signOut();
+    }
 
     console.log({session, status});
     
     if (status === 'authenticated'){
         return(
             <div className='d-flex'>
-                <button onClick={() => signOut()}> Sign out</button>
                 <AccountCircleOutlinedIcon fontSize='small'></AccountCircleOutlinedIcon>
-                <p>{session.user?.username}</p>
+                <p>{username}</p>
+                <button onClick={handleSignOut}> Sign out</button>
             </div>
 
         )

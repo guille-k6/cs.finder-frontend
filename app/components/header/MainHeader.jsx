@@ -20,7 +20,7 @@ export default function MainHeader() {
               <Link href='explorar' className='link-nav'>Explorar</Link>              
             </li>
             <li>
-              <LoginComponent text={"Texto"} path={"usuario"} isUserLoggedIn={false}></LoginComponent>
+              <LoginComponent></LoginComponent>
             </li>
           </ul>
         </nav>

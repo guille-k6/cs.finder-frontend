@@ -15,6 +15,7 @@
   padding: 12px 45px;
   letter-spacing: 1px;
   transition: transform 80ms ease-in;
+  margin: 1rem 0rem;
 }
 
 .newlogin-button:hover {
@@ -112,6 +113,11 @@ button.ghost {
 }
 .overlay-text{
   text-wrap: balance;
+}
+.overlay-title{
+  font-size: x-large;
+  font-weight: 600;
+  padding: 8px 0px;
 }
 
 .newlogin-container.right-panel-active .overlay-container{
